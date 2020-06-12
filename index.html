@@ -5,6 +5,7 @@
     <link rel="icon" type="image/png" href="img/favicon.png">
     <LINK REL=StyleSheet HREF="index.css" TYPE="text/css" MEDIA=screen>
     <title>Sistema de Compras de Productos</title>
+    <script src="./agregarProducto.js"></script>
 </head>
 
 <body>
@@ -20,14 +21,14 @@
                     <h5 align="leftr" style="color:red;margin-bottom: 0.4em;">
                         Ingrese código de producto:
                     </h5>
-                    <input id="codigo" style="width: 120px;">
+                    <input id="codigo" style="width: 120px;" required>
                 </div>
                 <div style="float: left;margin-right: 2em;">
-                    <h5 align="left" style="color:red">
+                    <h5 align="left" style="color:red" aria-required="true">
                         Cantidad:
                     </h5>
                     <input id="cantidad" type="number" min="0" style="width:70px;height: 33px;">
-                    <button style="height: 34px;margin-left: 2em;">
+                    <button style="height: 34px;margin-left: 2em;" onclick="agregarProducto()">
                         Agregar
                     </button>
                 </div>
@@ -46,88 +47,26 @@
                 </h5>
             </div>
         </div>
-        <script>
-            let productos = [
-                {
-                    id: 1,
-                    desc: 'Azúcar Iansa Rubia 500g',
-                    precio: '1.000',
-                    img: 'img/Productos/Azúcar Iansa Rubia 500g'
-                },
-                {
-                    id: 2,
-                    desc: 'Café Nescafé Dolca 50g',
-                    precio: "1.000",
-                    img: 'img/Productos/Café Nescafé Dolca 50g'
-                },
-                {
-                    id: 3,
-                    desc: 'Crema Nestlé variedades 157g',
-                    precio: "1.000",
-                    img: 'img/Productos/Crema Nestlé variedades 157g'
-                },
-                {
-                    id: 4,
-                    desc: 'Galletas Mckay Criollitas champaña 150g',
-                    precio: "1.000",
-                    img: 'img/Productos/Galletas Mckay Criollitas champaña 150g'
-                },
-                {
-                    id: 5,
-                    desc: 'Pack Chocman 8 unid.',
-                    precio: "1.000",
-                    img: 'img/Productos/Pack Chocman 8 unid.'
-                },
-                {
-                    id: 6,
-                    desc: 'Palmitos en trozos Máxima 250g drenados',
-                    precio: "1.000",
-                    img: 'img/Productos/Palmitos en trozos Máxima 250g drenados'
-                },
-                {
-                    id: 7,
-                    desc: 'Papel higiénico Elite doble hoja 30m 16 unid.',
-                    precio: "1.000",
-                    img: 'img/Productos/Papel higiénico Elite doble hoja 30m 16 unid.'
-                },
-                {
-                    id: 8,
-                    desc: 'Saborizante de leche Cola Cao chocolate 180g',
-                    precio: "1.000",
-                    img: 'img/Productos/Saborizante de leche Cola Cao chocolate 180g'
-                },
-                {
-                    id: 9,
-                    desc: 'Toalla Nova clásica gigante 80m',
-                    precio: "1.000",
-                    img: 'img/Productos/Toalla Nova clásica gigante 80m'
-                },
-                {
-                    id: 10,
-                    desc: 'Torta Chocolate Santa Isabel',
-                    precio: "1.000",
-                    img: 'img/Productos/Torta Chocolate Santa Isabel'
-                }]
-        </script>
         <div style="background-color: cornflowerblue;">
-            <table id="detalle">
-                <tr>
-                    <th id="Imagen">
+            <table id="tabla" style="width:99.2%;float:right;">
+                <thead style="background-color:red;color:white">
+                    <th id="img">
                         Imagen
                     </th>
                     <th id="producto">
                         Producto
                     </th>
-                    <th id="Precio">
+                    <th id="precio">
                         Precio Unitario($)
                     </th>
-                    <th id="Cantidad">
+                    <th id="cantidad">
                         Cantidad
                     </th>
-                    <th id="Monto">
+                    <th id="monto">
                         Monto($)
                     </th>
-                </tr>
+                </thead>
+                <tbody id="cuerpoTabla"></tbody>
             </table>
         </div>
     </div>
