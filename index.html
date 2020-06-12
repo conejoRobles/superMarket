@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <LINK REL=StyleSheet HREF="index.css" TYPE="text/css" MEDIA=screen>
+    <title>Sistema de Compras de Productos</title>
+</head>
+
+<body>
+    <div style="padding-left: 1em;">
+        <img style="float: right; padding-right:2em ;" src="img/logo.png">
+        <div class="title" style="background-color: greenyellow;">
+            <h1>
+                Sistema de Compras de Productos
+            </h1>
+            <hr class="separador" />
+            <div style="background-color: hotpink;height:100px;width: 50%;padding-left: 2em;">
+                <div style="float: left;margin-right:2em;width: 150px;overflow: inherit;">
+                    <h5 align="leftr" style="color:red;margin-bottom: 0.4em;">
+                        Ingrese código de producto:
+                    </h5>
+                    <input id="codigo" style="width: 120px;">
+                </div>
+                <div style="float: left;margin-right: 2em;">
+                    <h5 align="left" style="color:red">
+                        Cantidad:
+                    </h5>
+                    <input id="cantidad" type="number" min="0" style="width:70px;height: 33px;">
+                    <button style="height: 34px;margin-left: 2em;">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 1em;height: 70px;">
+            <div style="width: 50%;background-color: blue;height: 70%;float:left;">
+                <h5 style="color: red;padding-left: 1em;">Listado de productos</h5>
+            </div>
+            <div style="width: 50%;background-color: red;height: 70%;float:right">
+                <h5 style="float: right;padding-right: 3rem;">
+                    <script>
+                        let fecha = new Date()
+                        document.write("Fecha: "+fecha.getDay() +"-"+fecha.getMonth()+"-"+fecha.getFullYear())
+                    </script>
+                </h5>
+            </div>
+        </div>
+        <div style="background-color: cornflowerblue;">
+            <table id="detalle">
+                <tr>
+                    <th id="Imagen">
+                        Imagen
+                    </th>
+                    <th id="producto">
+                        Producto
+                    </th>
+                    <th id="Precio">
+                        Precio Unitario($)
+                    </th>
+                    <th id="Cantidad">
+                        Cantidad
+                    </th>
+                    <th id="Monto">
+                        Monto($)
+                    </th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

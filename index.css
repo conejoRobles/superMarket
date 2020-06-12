@@ -1,0 +1,22 @@
+.title{
+    color: #24366d;
+    width: 85%;
+    
+}
+.separador{
+    height:0.2em;
+    margin-left: 0%;
+    background-color: red;
+    border-color: red;
+}
+.right {
+    position: absolute;
+    right: 2em;
+    width: 125px;
+    padding: 10px;
+    overflow: auto;
+  }
+table#detalle{
+    width: 100%;
+    border: 1px solid black;
+}
