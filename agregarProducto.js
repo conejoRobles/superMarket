@@ -1,5 +1,5 @@
 function agregarProducto() {
-    let body = document.getElementsByTagName("body")[0]
+    let body = document.getElementsByTagName("container")[0]
     let tabla = document.getElementById("tabla")
     let tblBody = document.getElementById("cuerpoTabla")
     let codigo = document.getElementById("codigo")
@@ -14,14 +14,14 @@ function agregarProducto() {
         let monto = document.createElement("td")
 
         if (codigo.value == producto.id) {
-            img.innerHTML = "<img src=" + productos[codigo.value-1].img + ">"
+            img.innerHTML = "<img src=" + productos[codigo.value - 1].img + ">"
             descripcion.appendChild(document.createTextNode(producto.desc))
             precio.appendChild(document.createTextNode(producto.precio))
             cantidad.appendChild(document.createTextNode(cant.value))
-            monto.appendChild(document.createTextNode(cant.value*parseInt(producto.precio,10)))
-            total+=cant.value*parseInt(producto.precio,10)
+            monto.appendChild(document.createTextNode(cant.value * parseInt(producto.precio, 10)))
+            total += cant.value * parseInt(producto.precio, 10)
             console.log(cant.value)
-            console.log(parseInt(producto.precio,10))
+            console.log(parseInt(producto.precio, 10))
             row.appendChild(img)
             row.appendChild(descripcion)
             row.appendChild(precio)
@@ -36,8 +36,7 @@ function agregarProducto() {
 }
 
 
-let productos = [
-    {
+let productos = [{
         id: 1,
         desc: 'Azúcar Iansa Rubia 500g',
         precio: '1000',
@@ -96,4 +95,5 @@ let productos = [
         desc: 'Torta Chocolate Santa Isabel',
         precio: " 1000",
         img: 'img/Productos/Torta_Chocolate_Santa_Isabel.jpg'
-    }]
+    }
+]
