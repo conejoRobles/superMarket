@@ -4,133 +4,75 @@
 <head>
     <link rel="icon" type="image/png" href="img/favicon.png">
     <LINK REL=StyleSheet HREF="index.css" TYPE="text/css" MEDIA=screen>
-    <title>Sistema de Compras de Productos</title>
+    <title>
+        Sistema de Compras de Productos
+    </title>
+    <script src="./agregarProducto.js"></script>
 </head>
 
 <body>
-    <div style="padding-left: 1em;">
-        <img style="float: right; padding-right:2em ;" src="img/logo.png">
-        <div class="title" style="background-color: greenyellow;">
-            <h1>
+    <section id="container" class="container">
+        <section class="title-container">
+            <h1 style="margin-left: 1em;">
                 Sistema de Compras de Productos
             </h1>
-            <hr class="separador" />
-            <div style="background-color: hotpink;height:100px;width: 50%;padding-left: 2em;">
-                <div style="float: left;margin-right:2em;width: 150px;overflow: inherit;">
-                    <h5 align="leftr" style="color:red;margin-bottom: 0.4em;">
-                        Ingrese código de producto:
-                    </h5>
-                    <input id="codigo" style="width: 120px;">
-                </div>
-                <div style="float: left;margin-right: 2em;">
-                    <h5 align="left" style="color:red">
-                        Cantidad:
-                    </h5>
-                    <input id="cantidad" type="number" min="0" style="width:70px;height: 33px;">
-                    <button style="height: 34px;margin-left: 2em;">
-                        Agregar
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div style="margin-top: 1em;height: 70px;">
-            <div style="width: 50%;background-color: blue;height: 70%;float:left;">
-                <h5 style="color: red;padding-left: 1em;">Listado de productos</h5>
-            </div>
-            <div style="width: 50%;background-color: red;height: 70%;float:right">
-                <h5 style="float: right;padding-right: 3rem;">
-                    <script>
-                        let fecha = new Date()
-                        document.write("Fecha: " + fecha.getDay() + "-" + fecha.getMonth() + "-" + fecha.getFullYear())
-                    </script>
+            <hr class="separador">
+        </section>
+        <section class="img-container">
+            <img class="logo" src="img/logo.png">
+        </section>
+        <section class="ingreso">
+            <section class="ingreso-encabezado">
+                <h5>
+                    Ingrese codigo
                 </h5>
+                <h5>
+                    Cantidad
+                </h5>
+            </section>
+            <section class="ingreso-input">
+                <input id="codigo">
+                <input id="cantidad" class="grosor" type="number">
+                <button class="grosor" onclick="agregarProducto()">
+                    AGREGAR
+                </button>
+            </section>
+        </section>
+        <section class="info-display">
+            <h5>
+                Listado de productos:
+            </h5>
+            <h5 id="fecha">
+                <script>
+                    let fecha = new Date()
+                    console.log(fecha)
+                    document.write("Fecha: " + fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear())
+                </script>
+            </h5>
+            <div class="tabla-container">
+                <table id="tabla">
+                    <thead class="borde header">
+                        <th id="img" class="borde">
+                            Imagen
+                        </th>
+                        <th id="producto" class="borde">
+                            Producto
+                        </th>
+                        <th id="precio" class="borde">
+                            Precio Unitario($)
+                        </th>
+                        <th id="cantidad" class="borde">
+                            Cantidad
+                        </th>
+                        <th id="monto" class="borde">
+                            Monto($)
+                        </th>
+                    </thead>
+                    <tbody id="cuerpoTabla"></tbody>
+                </table>
             </div>
-        </div>
-        <script>
-            let productos = [
-                {
-                    id: 1,
-                    desc: 'Azúcar Iansa Rubia 500g',
-                    precio: '1.000',
-                    img: 'img/Productos/Azúcar Iansa Rubia 500g'
-                },
-                {
-                    id: 2,
-                    desc: 'Café Nescafé Dolca 50g',
-                    precio: "1.000",
-                    img: 'img/Productos/Café Nescafé Dolca 50g'
-                },
-                {
-                    id: 3,
-                    desc: 'Crema Nestlé variedades 157g',
-                    precio: "1.000",
-                    img: 'img/Productos/Crema Nestlé variedades 157g'
-                },
-                {
-                    id: 4,
-                    desc: 'Galletas Mckay Criollitas champaña 150g',
-                    precio: "1.000",
-                    img: 'img/Productos/Galletas Mckay Criollitas champaña 150g'
-                },
-                {
-                    id: 5,
-                    desc: 'Pack Chocman 8 unid.',
-                    precio: "1.000",
-                    img: 'img/Productos/Pack Chocman 8 unid.'
-                },
-                {
-                    id: 6,
-                    desc: 'Palmitos en trozos Máxima 250g drenados',
-                    precio: "1.000",
-                    img: 'img/Productos/Palmitos en trozos Máxima 250g drenados'
-                },
-                {
-                    id: 7,
-                    desc: 'Papel higiénico Elite doble hoja 30m 16 unid.',
-                    precio: "1.000",
-                    img: 'img/Productos/Papel higiénico Elite doble hoja 30m 16 unid.'
-                },
-                {
-                    id: 8,
-                    desc: 'Saborizante de leche Cola Cao chocolate 180g',
-                    precio: "1.000",
-                    img: 'img/Productos/Saborizante de leche Cola Cao chocolate 180g'
-                },
-                {
-                    id: 9,
-                    desc: 'Toalla Nova clásica gigante 80m',
-                    precio: "1.000",
-                    img: 'img/Productos/Toalla Nova clásica gigante 80m'
-                },
-                {
-                    id: 10,
-                    desc: 'Torta Chocolate Santa Isabel',
-                    precio: "1.000",
-                    img: 'img/Productos/Torta Chocolate Santa Isabel'
-                }]
-        </script>
-        <div style="background-color: cornflowerblue;">
-            <table id="detalle">
-                <tr>
-                    <th id="Imagen">
-                        Imagen
-                    </th>
-                    <th id="producto">
-                        Producto
-                    </th>
-                    <th id="Precio">
-                        Precio Unitario($)
-                    </th>
-                    <th id="Cantidad">
-                        Cantidad
-                    </th>
-                    <th id="Monto">
-                        Monto($)
-                    </th>
-                </tr>
-            </table>
-        </div>
-    </div>
+        </section>
+    </section>
 </body>
 
 </html>

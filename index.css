@@ -1,22 +1,102 @@
-.title{
-    color: #24366d;
-    width: 85%;
-    
+.container {
+    width: 90%;
+    margin: auto;
 }
-.separador{
-    height:0.2em;
-    margin-left: 0%;
-    background-color: red;
-    border-color: red;
+
+.title-container {
+    width: 80%;
+    color: red;
+    float: left;
 }
-.right {
-    position: absolute;
-    right: 2em;
-    width: 125px;
-    padding: 10px;
-    overflow: auto;
-  }
-table#detalle{
+
+.img-container {
+    width: 20%;
+    float: right;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+}
+
+.separador {
     width: 100%;
-    border: 1px solid black;
+    height: 0.5em;
+    background: red;
+    border-color: red;
+    margin-left: 1em;
+    border-radius: 0.3em;
+}
+
+.ingreso {
+    width: 80%;
+    display: inline-block;
+}
+
+.ingreso h5 {
+    display: inline-block;
+    margin-right: 5em;
+}
+
+.ingreso-encabezado {
+    height: 3em;
+    margin-left: 2em;
+}
+
+.ingreso-input {
+    margin-left: 2em;
+    display: inline-block;
+}
+
+.ingreso-input input {
+    width: 100px;
+    margin-right: 3em;
+}
+
+.grosor {
+    height: 33px;
+}
+
+.info-display {
+    width: 100%;
+    margin-left: 1em;
+}
+
+.info-display h5 {
+    color: red;
+    display: inline-block;
+}
+
+#fecha {
+    float: right;
+    color: red;
+}
+
+#tabla {
+    width: 100%;
+    border: 2px solid red;
+    border-radius: 0.3em;
+}
+
+#cuerpoTabla td {
+    border: 2px solid black;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.borde {
+    width: auto;
+    color: white;
+    background: red;
+}
+
+.tabla-container {
+    width: 80%;
+    height: 470px;
+    background-color: greenyellow;
+    overflow-y: scroll;
+}
+
+.header {
+    position: sticky;
 }
