@@ -1,10 +1,15 @@
+let totalPago = 0
+
 function agregarProducto() {
     let body = document.getElementsByTagName("container")[0]
     let tabla = document.getElementById("tabla")
     let tblBody = document.getElementById("cuerpoTabla")
     let codigo = document.getElementById("codigo")
     let cant = document.getElementById("cantidad")
-    let total = 0
+    let total = document.getElementById("total")
+
+    let cont = 0
+
     productos.map(producto => {
         let row = document.createElement("tr")
         let img = document.createElement("td")
@@ -19,9 +24,7 @@ function agregarProducto() {
             precio.appendChild(document.createTextNode(producto.precio))
             cantidad.appendChild(document.createTextNode(cant.value))
             monto.appendChild(document.createTextNode(cant.value * parseInt(producto.precio, 10)))
-            total += cant.value * parseInt(producto.precio, 10)
-            console.log(cant.value)
-            console.log(parseInt(producto.precio, 10))
+            cont += cant.value * parseInt(producto.precio, 10)
             row.appendChild(img)
             row.appendChild(descripcion)
             row.appendChild(precio)
@@ -30,16 +33,35 @@ function agregarProducto() {
             tblBody.appendChild(row)
         }
     })
+    totalPago += cont
+    total.innerHTML = "<h1 id='total'>" + totalPago + "</h1>"
     tabla.appendChild(tblBody)
     body.appendChild(tabla)
     tabla.setAttribute("border", "")
 }
 
+function obtenerFecha() {
+    let fecha = new Date()
+    document.write("Fecha: " + fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear())
+}
+
+function calcularTotal() {
+
+    let pagoIn = document.getElementById("pagoIn")
+    let pagado = document.getElementById("pagado")
+    let cambio = document.getElementById("cambio")
+
+    //let respuesta = ((parseInt(pagoIn.value, 10) - totalPago) <= 0) ? 0 : (parseInt(pagoIn.value, 10) - totalPago)
+    let respuesta = (parseInt(pagoIn.value, 10) == NaN) ? 0 : (parseInt(pagoIn.value, 10) - totalPago)
+    cambio.innerHTML = "<h6 id='cambio'>" + respuesta + "</h6>"
+    pagado.innerHTML = "<h6 id='pagado'>" + parseInt(pagoIn.value, 10) + "</h6>"
+
+}
 
 let productos = [{
         id: 1,
         desc: 'Azúcar Iansa Rubia 500g',
-        precio: '1000',
+        precio: '2300',
         img: 'img/Productos/Azucar_Iansa_Rubia_500g.jpg'
     },
     {

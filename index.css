@@ -58,13 +58,19 @@
 }
 
 .info-display {
+    float: left;
     width: 100%;
     margin-left: 1em;
+    margin-bottom: 1em;
 }
 
 .info-display h5 {
     color: red;
     display: inline-block;
+}
+
+.info-display-header {
+    width: 100%;
 }
 
 #fecha {
@@ -73,9 +79,14 @@
 }
 
 #tabla {
-    width: 100%;
+    width: 99%;
     border: 2px solid red;
     border-radius: 0.3em;
+    float: left;
+}
+
+#tabla th {
+    position: sticky;
 }
 
 #cuerpoTabla td {
@@ -84,19 +95,84 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+#cuerpoTabla th {
+    width: 20px;
+}
+
 .borde {
-    width: auto;
     color: white;
     background: red;
 }
 
 .tabla-container {
     width: 80%;
-    height: 470px;
-    background-color: greenyellow;
+    height: 700px;
     overflow-y: scroll;
+    overflow-x: scroll;
+    float: left;
 }
 
-.header {
-    position: sticky;
+.tabla-container th {
+    top: 0;
+}
+
+#resumen-container {
+    width: 96%;
+    height: 98%;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 2px;
+    margin-right: 2px;
+    text-align: center;
+    display: inline-block;
+    background-color: red;
+    border-radius: 0.5em;
+    color: white;
+}
+
+#resumen-container-borde {
+    width: 19%;
+    height: 700px;
+    border: 1px solid red;
+    margin-left: 0.5em;
+    border-radius: 0.5em;
+    background-color: white;
+    display: inline-block;
+}
+
+.aside-input {
+    width: 70%;
+}
+
+#marco-total {
+    background-color: #922b21;
+    width: 70%;
+    display: inline-block;
+    border-radius: 0.5em;
+    color: #f1c40f;
+}
+
+#marco-pagado {
+    background-color: #f4d03f;
+    width: 70%;
+    display: inline-block;
+    border-radius: 0.5em;
+    color: #d8570d;
+}
+
+#marco-cambio {
+    background-color: #186a3b;
+    width: 70%;
+    display: inline-block;
+    border-radius: 0.5em;
+    color: greenyellow;
+}
+
+#pagoIn {
+    width: 60%;
+    height: 30px;
+}
+
+#codigo {
+    height: 30px;
 }
