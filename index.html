@@ -32,8 +32,8 @@
                 </h5>
             </section>
             <section class="ingreso-input">
-                <input id="codigo" type="number" min="0" placeholder="1-10" required>
-                <input id="cantidad" class="grosor" type="number" required>
+                <input id="codigo" type="number" min="0" placeholder="1-10" onchange="agregarProducto()" required>
+                <input id="cantidad" class="grosor" onchange="agregarProducto()" type="number" required>
                 <button class="grosor" onclick="agregarProducto()">
                         AGREGAR
                     </button>
