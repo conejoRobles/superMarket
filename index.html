@@ -31,27 +31,27 @@
                 </h5>
             </section>
             <section class="ingreso-input">
-                <input id="codigo">
-                <input id="cantidad" class="grosor" type="number">
+                <input id="codigo" type="number" min="0" required>
+                <input id="cantidad" class="grosor" type="number" required>
                 <button class="grosor" onclick="agregarProducto()">
-                    AGREGAR
-                </button>
+                        AGREGAR
+                    </button>
             </section>
         </section>
         <section class="info-display">
-            <h5>
-                Listado de productos:
-            </h5>
-            <h5 id="fecha">
-                <script>
-                    let fecha = new Date()
-                    console.log(fecha)
-                    document.write("Fecha: " + fecha.getDate() + "-" + (fecha.getMonth() + 1) + "-" + fecha.getFullYear())
-                </script>
-            </h5>
+            <section class="info-display-header">
+                <h5>
+                    Listado de productos:
+                </h5>
+                <h5 id="fecha">
+                    <script>
+                        obtenerFecha()
+                    </script>
+                </h5>
+            </section>
             <div class="tabla-container">
                 <table id="tabla">
-                    <thead class="borde header">
+                    <thead id="tabla-header" class="borde">
                         <th id="img" class="borde">
                             Imagen
                         </th>
@@ -71,6 +71,28 @@
                     <tbody id="cuerpoTabla"></tbody>
                 </table>
             </div>
+            <section id="resumen-container-borde">
+                <section id="resumen-container">
+                    <aside>
+                        <h1>Ingrese monto a pagar:</h1>
+                        <input id="pagoIn" class="aside-input" type="number" min="0" placeholder="ej: 5000" onChange="calcularTotal()">
+                    </aside>
+                    <aside id="total-container">
+                        <h1>Total:</h1>
+                        <section id="marco-total">
+                            <h2 id="total">0</h2>
+                        </section>
+                        <h1>Pagado:</h1>
+                        <section id="marco-pagado">
+                            <h2 id="pagado">0</h2>
+                        </section>
+                        <h1>Cambio:</h1>
+                        <section id="marco-cambio">
+                            <h2 id="cambio">0</h2>
+                        </section>
+                    </aside>
+                </section>
+            </section>
         </section>
     </section>
 </body>
