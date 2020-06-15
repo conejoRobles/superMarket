@@ -32,11 +32,11 @@
                 </h5>
             </section>
             <section class="ingreso-input">
-                <input id="codigo" type="number" min="0" placeholder="1-10" onchange="agregarProducto()" required>
-                <input id="cantidad" class="grosor" onchange="agregarProducto()" type="number" required>
+                <input id="codigo" type="number" min="0" placeholder="1-10" required>
+                <input id="cantidad" class="grosor" min='0' type="number" required>
                 <button class="grosor" onclick="agregarProducto()">
                         AGREGAR
-                    </button>
+                </button>
             </section>
         </section>
         <section class="info-display">
@@ -75,19 +75,22 @@
             <section id="resumen-container-borde">
                 <section id="resumen-container">
                     <aside>
-                        <h1>Ingrese monto a pagar:</h1>
-                        <input id="pagoIn" class="aside-input" type="number" min="0" placeholder="ej: 5000" onChange="calcularTotal()">
+                        <h4>Ingrese monto a pagar:</h4>
+                        <input id="pagoIn" class="aside-input" type="number" min="0" step="10" placeholder="ej: 5000" onchange="calcularTotal()" required>
+                        <button id="boton-pagado" onclick="calcularTotal()">Pagar</button>
                     </aside>
+                    <br>
+
                     <aside id="total-container">
-                        <h1>Total:</h1>
+                        <h4>Total:</h4>
                         <section id="marco-total">
                             <h2 id="total">0</h2>
                         </section>
-                        <h1>Pagado:</h1>
+                        <h4>Pagado:</h4>
                         <section id="marco-pagado">
                             <h2 id="pagado">0</h2>
                         </section>
-                        <h1>Cambio:</h1>
+                        <h4>Cambio:</h4>
                         <section id="marco-cambio">
                             <h2 id="cambio">0</h2>
                         </section>

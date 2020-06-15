@@ -169,8 +169,13 @@
 }
 
 #pagoIn {
-    width: 60%;
-    height: 30px;
+    width: 35%;
+    height: 45px;
+}
+
+#boton-pagado {
+    width: 30%;
+    height: 45px;
 }
 
 #codigo {

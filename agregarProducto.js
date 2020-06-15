@@ -10,6 +10,8 @@ function agregarProducto() {
 
     let cont = 0
 
+    console.log((cant.value == '') ? "eso era" : "jajajaja")
+
     productos.map(producto => {
         let row = document.createElement("tr")
         let img = document.createElement("td")
@@ -18,13 +20,16 @@ function agregarProducto() {
         let cantidad = document.createElement("td")
         let monto = document.createElement("td")
 
-        if (codigo.value == producto.id) {
+        console.log(isNaN(cant.value) + "2")
+
+        if (codigo.value == producto.id && cant.value != '') {
+            console.log(isNaN(cant.value) + "3")
             img.innerHTML = "<img src=" + productos[codigo.value - 1].img + ">"
             descripcion.appendChild(document.createTextNode(producto.desc))
             precio.appendChild(document.createTextNode(producto.precio))
-            cantidad.appendChild(document.createTextNode(cant.value))
-            monto.appendChild(document.createTextNode(cant.value * parseInt(producto.precio, 10)))
-            cont += cant.value * parseInt(producto.precio, 10)
+            cantidad.appendChild(document.createTextNode((cant.value >= 0) ? cant.value : 0))
+            monto.appendChild(document.createTextNode((cant.value >= 0) ? cant.value * parseInt(producto.precio, 10) : 0))
+            cont += ((cant.value >= 0) ? cant.value * parseInt(producto.precio, 10) : 0)
             row.appendChild(img)
             row.appendChild(descripcion)
             row.appendChild(precio)
@@ -51,10 +56,11 @@ function calcularTotal() {
     let pagado = document.getElementById("pagado")
     let cambio = document.getElementById("cambio")
 
-    //let respuesta = ((parseInt(pagoIn.value, 10) - totalPago) <= 0) ? 0 : (parseInt(pagoIn.value, 10) - totalPago)
-    let respuesta = (parseInt(pagoIn.value, 10) == NaN) ? 0 : (parseInt(pagoIn.value, 10) - totalPago)
+    let money = isNaN(parseInt(pagoIn.value, 10)) ? 0 : parseInt(pagoIn.value)
+
+    let respuesta = money - totalPago
     cambio.innerHTML = "<h6 id='cambio'>" + respuesta + "</h6>"
-    pagado.innerHTML = "<h6 id='pagado'>" + parseInt(pagoIn.value, 10) + "</h6>"
+    pagado.innerHTML = "<h6 id='pagado'>" + money + "</h6>"
 
 }
 
